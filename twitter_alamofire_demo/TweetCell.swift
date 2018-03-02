@@ -41,181 +41,97 @@ class TweetCell: UITableViewCell {
             timestampLabel.text = tweet.createdAtString
             usernameTextLabel.text = tweet.user.name
             
+            favoriteLabel.text = "\(formatCounter(count: tweet.favoriteCount!))"
+            retweetLabel.text = "\(formatCounter(count: tweet.retweetCount))"
             
-            // favorite button
-            if tweet.favorited! {
-                favoriteButton.isSelected = true
+            if(tweet.favorited)!{
+                favoriteButton.setImage(#imageLiteral(resourceName: "favor-icon-red"), for: .normal)
             }
-            else {
-                favoriteButton.isSelected = false
+            else{
+                favoriteButton.setImage(#imageLiteral(resourceName: "favor-icon"), for: .normal)
             }
-            
-            // retweet button
-            if tweet.retweeted {
-                retweetButton.isSelected = true
-            } else {
-                retweetButton.isSelected = false
+            if(tweet.retweeted){
+                retweetButton.setImage(#imageLiteral(resourceName: "retweet-icon-green"), for: .normal)
             }
-            
-            
-            
-            // favorite count
-            print(tweet.favoriteCount)
-            if tweet.favoriteCount! == 0 {
-                favoriteLabel.text = "0"
-            } else {
-                if tweet.favoriteCount! >= 1000000 {
-                    favoriteLabel.text = String(tweet.favoriteCount! / 1000000) + "M"
-                } else if tweet.favoriteCount! >= 1000 {
-                    favoriteLabel.text = String(tweet.favoriteCount! / 1000) + "K"
-                    
-                } else {
-                    favoriteLabel.text = String(tweet.favoriteCount!)
-                }
-            }
-            
-            
-            // retweet count
-            if tweet.retweetCount == 0 {
-                retweetLabel.text = ""
-            } else {
-                if tweet.retweetCount >= 1000000 {
-                    retweetLabel.text = String(tweet.retweetCount / 1000000) + "M"
-                } else if tweet.retweetCount >= 1000 {
-                    retweetLabel.text = String(tweet.retweetCount / 1000) + "K"
-                    
-                } else {
-                    retweetLabel.text = String(tweet.retweetCount)
-                }
+            else{
+                retweetButton.setImage(#imageLiteral(resourceName: "retweet-icon"), for: .normal)
             }
         }
     }
     @IBAction func didTapFavorite(_ sender: Any) {
-        if tweet.favorited! {
-            favoriteButton.isSelected = false
-            tweet.favorited = false
-            
-            tweet.favoriteCount = tweet.favoriteCount! - 1
-            
-            // favorite count
-            if tweet.favoriteCount == 0 {
-                favoriteLabel.text = ""
-            } else {
-                if tweet.favoriteCount! >= 1000000 {
-                    favoriteLabel.text = String(tweet.favoriteCount! / 1000000) + "M"
-                } else if tweet.favoriteCount! >= 1000 {
-                    favoriteLabel.text = String(tweet.favoriteCount! / 1000) + "K"
-                    
-                } else {
-                    favoriteLabel.text = String(tweet.favoriteCount!)
-                }
-            }
-            
-            // network request
-            APIManager.shared.unfavorite(with: tweet, completion: { (tweet: Tweet?, error: Error?) in
-                if let error = error {
-                    print("Error retweeting Tweet: \(error.localizedDescription)")
-                } else if let tweet = tweet {
-                    print("Unfavorite success!")
-                    
-                }
-                
-            })
-        }else {
-            favoriteButton.isSelected = true
+        if(tweet.favorited == false){
             tweet.favorited = true
-            
-            tweet.favoriteCount = tweet.favoriteCount! + 1
-            
-            // favorite count
-            if tweet.favoriteCount == 0 {
-                favoriteLabel.text = ""
-            } else {
-                if tweet.favoriteCount! >= 1000000 {
-                    favoriteLabel.text = String(tweet.favoriteCount! / 1000000) + "M"
-                } else if tweet.favoriteCount! >= 1000 {
-                    favoriteLabel.text = String(tweet.favoriteCount! / 1000) + "K"
-                    
-                } else {
-                    favoriteLabel.text = String(tweet.favoriteCount!)
+            tweet.favoriteCount! += 1
+            favoriteLabel.text = "\(tweet.favoriteCount!)"
+            (sender as! UIButton).setImage(#imageLiteral(resourceName: "favor-icon-red"), for: .normal)
+            APIManager.shared.favorite(with: tweet) { (tweet: Tweet?, error: Error?) in
+                if let  error = error {
+                    print("Error favoriting tweet: \(error.localizedDescription)")
+                } else if let tweet = tweet {
+                    print("Successfully favorited the following Tweet: \n\(tweet.text)")
                 }
             }
-            // network request
-            APIManager.shared.favorite(with: tweet, completion: { (tweet: Tweet?, error: Error?) in
-                if let error = error {
-                    print("Error retweeting Tweet: \(error.localizedDescription)")
+        }
+        else{
+            tweet.favorited = false
+            tweet.favoriteCount! -= 1
+            favoriteLabel.text = "\(tweet.favoriteCount!)"
+            (sender as! UIButton).setImage(#imageLiteral(resourceName: "favor-icon"), for: .normal)
+            APIManager.shared.unfavorite(with: tweet, completion: { (tweet, error) in
+                if let  error = error {
+                    print("Error unfavoriting tweet: \(error.localizedDescription)")
                 } else if let tweet = tweet {
-                    print("Favorite success!")
+                    print("Successfully unfavorited the following Tweet: \n\(tweet.text)")
                 }
             })
         }
     }
     
     @IBAction func didTapRetweet(_ sender: Any) {
-        if tweet.retweeted {
-            retweetButton.isSelected = false
-            tweet.retweeted = false
-            
-            tweet.retweetCount = tweet.retweetCount - 1
-            
-            // retweet count
-            if tweet.retweetCount == 0 {
-                retweetLabel.text = ""
-            } else {
-                if tweet.retweetCount >= 1000000 {
-                    retweetLabel.text = String(tweet.retweetCount / 1000000) + "M"
-                } else if tweet.retweetCount >= 1000 {
-                    retweetLabel.text = String(tweet.retweetCount / 1000) + "K"
-                    
-                } else {
-                    retweetLabel.text = String(tweet.retweetCount)
-                }
-            }
-            
-            // network request
-            APIManager.shared.unretweet(with: tweet, completion: { (tweet: Tweet?, error: Error?) in
-                if let error = error {
-                    print("Error retweeting Tweet: \(error.localizedDescription)")
-                } else if let tweet = tweet {
-                    print("Unretweet success!")
-                    
-                }
-                
-            })
-        } else {
-            retweetButton.isSelected = true
+        if(tweet.retweeted == false){
             tweet.retweeted = true
-            
-            retweetButton.isSelected = true
-            tweet.retweetCount = tweet.retweetCount + 1
-            
-            // retweet count
-            if tweet.retweetCount == 0 {
-                retweetLabel.text = ""
-            } else {
-                if tweet.retweetCount >= 1000000 {
-                    retweetLabel.text = String(tweet.retweetCount / 1000000) + "M"
-                } else if tweet.retweetCount >= 1000 {
-                    retweetLabel.text = String(tweet.retweetCount / 1000) + "K"
-                    
-                } else {
-                    retweetLabel.text = String(tweet.retweetCount)
-                }
-            }
-            
-            // network request
-            APIManager.shared.retweet(with: tweet, completion: { (tweet: Tweet?, error: Error?) in
-                if let error = error {
-                    print("Error retweeting Tweet: \(error.localizedDescription)")
+            tweet.retweetCount += 1
+            retweetLabel.text = "\(tweet.retweetCount)"
+            (sender as! UIButton).setImage(#imageLiteral(resourceName: "retweet-icon-green"), for: .normal)
+            APIManager.shared.retweet(with: tweet, completion: { (tweet, error) in
+                if let  error = error {
+                    print("Error retweeting: \(error.localizedDescription)")
                 } else if let tweet = tweet {
-                    print("Retweet success!")
-                    
+                    print("Successfully retweeted the following Tweet: \n\(tweet.text)")
                 }
-                
             })
-            
+        }
+        else{
+            tweet.retweeted = false
+            tweet.retweetCount -= 1
+            retweetLabel.text = "\(tweet.retweetCount)"
+            (sender as! UIButton).setImage(#imageLiteral(resourceName: "retweet-icon"), for: .normal)
+            APIManager.shared.unretweet(with: tweet, completion: { (tweet, error) in
+                if let  error = error {
+                    print("Error unretweeting: \(error.localizedDescription)")
+                } else if let tweet = tweet {
+                    print("Successfully unretweeted the following Tweet: \n\(tweet.text)")
+                }
+            })
+        }
+    }
+    func formatCounter(count: Int) -> String{
+        var formattedCount = ""
+        // Billion, just in case
+        if(count >= 1000000000){
+            formattedCount = String(format: "%.1fb", Double(count) / 1000000000.0)
+        }
+        else if(count >= 1000000){
+            formattedCount = String(format: "%.1fm", Double(count) / 1000000.0)
+        }
+        else if(count >= 10000){
+            formattedCount = String(format: "%.1fk", Double(count) / 1000.0)
+        }
+        else{
+            formattedCount = "\(count)"
         }
         
+        return formattedCount
     }
     override func awakeFromNib() {
         super.awakeFromNib()
