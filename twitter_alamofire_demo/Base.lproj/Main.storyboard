@@ -102,8 +102,8 @@
                                                         <constraint firstAttribute="height" constant="50" id="oZ7-t6-9gx"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5S3-ue-0EI">
-                                                    <rect key="frame" x="254.5" y="86.5" width="30" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5S3-ue-0EI">
+                                                    <rect key="frame" x="210.5" y="86.5" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="IYX-8g-Sje"/>
                                                         <constraint firstAttribute="width" constant="30" id="R5n-j4-CWJ"/>
@@ -113,8 +113,8 @@
                                                         <action selector="didTapFavorite:" destination="U1g-kw-izy" eventType="touchUpInside" id="qw4-RZ-dQW"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkJ-5a-iOm">
-                                                    <rect key="frame" x="164" y="86.5" width="30" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkJ-5a-iOm">
+                                                    <rect key="frame" x="112" y="86.5" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="5YK-DO-tYf"/>
                                                         <constraint firstAttribute="height" constant="30" id="XjX-r7-BQB"/>
@@ -124,14 +124,14 @@
                                                         <action selector="didTapRetweet:" destination="U1g-kw-izy" eventType="touchUpInside" id="noE-Vw-5Vs"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="10,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsL-gp-KPN">
-                                                    <rect key="frame" x="198" y="91.5" width="52.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsL-gp-KPN">
+                                                    <rect key="frame" x="142" y="91.5" width="52.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="30,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLq-0t-iva">
-                                                    <rect key="frame" x="288" y="91.5" width="55" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLq-0t-iva">
+                                                    <rect key="frame" x="240.5" y="91.5" width="55" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -142,13 +142,18 @@
                                                     <color key="textColor" red="0.55413229695431476" green="0.55413229695431476" blue="0.55413229695431476" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WA9-7A-Y0S">
+                                                    <rect key="frame" x="66" y="87" width="30" height="30"/>
+                                                    <state key="normal" image="reply-icon"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="VkJ-5a-iOm" firstAttribute="centerY" secondItem="WA9-7A-Y0S" secondAttribute="centerY" id="1sa-1a-PDx"/>
                                                 <constraint firstAttribute="trailing" secondItem="epC-Fs-Q5Z" secondAttribute="trailing" constant="8" id="656-1H-mb0"/>
                                                 <constraint firstItem="5S3-ue-0EI" firstAttribute="top" secondItem="epC-Fs-Q5Z" secondAttribute="bottom" constant="8" id="6E6-hM-kBV"/>
                                                 <constraint firstItem="yLq-Jj-8mf" firstAttribute="leading" secondItem="uGv-fe-tI9" secondAttribute="trailing" constant="8" id="6HJ-r1-tAD"/>
                                                 <constraint firstItem="BsL-gp-KPN" firstAttribute="leading" secondItem="VkJ-5a-iOm" secondAttribute="trailing" id="87F-2h-xuj"/>
-                                                <constraint firstItem="5S3-ue-0EI" firstAttribute="leading" secondItem="BsL-gp-KPN" secondAttribute="trailing" id="9cY-ao-VKt"/>
+                                                <constraint firstItem="5S3-ue-0EI" firstAttribute="leading" secondItem="BsL-gp-KPN" secondAttribute="trailing" constant="16" id="9cY-ao-VKt"/>
                                                 <constraint firstItem="xmh-ds-pOI" firstAttribute="bottom" secondItem="yLq-Jj-8mf" secondAttribute="bottom" id="CDg-6V-KbR"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jNr-3p-4Xo" secondAttribute="trailing" constant="8" id="Fav-Sv-0lJ"/>
                                                 <constraint firstItem="epC-Fs-Q5Z" firstAttribute="leading" secondItem="yLq-Jj-8mf" secondAttribute="leading" id="LaG-kq-dhQ"/>
@@ -158,6 +163,8 @@
                                                 <constraint firstItem="uGv-fe-tI9" firstAttribute="leading" secondItem="zd2-Er-659" secondAttribute="leading" constant="8" id="cG0-45-ggp"/>
                                                 <constraint firstItem="yLq-Jj-8mf" firstAttribute="top" secondItem="uGv-fe-tI9" secondAttribute="top" id="dAP-xg-QVf"/>
                                                 <constraint firstItem="ZLq-0t-iva" firstAttribute="leading" secondItem="5S3-ue-0EI" secondAttribute="trailing" id="fLj-B9-j1E"/>
+                                                <constraint firstItem="VkJ-5a-iOm" firstAttribute="leading" secondItem="WA9-7A-Y0S" secondAttribute="trailing" constant="16" id="lIS-mw-4Gt"/>
+                                                <constraint firstItem="WA9-7A-Y0S" firstAttribute="leading" secondItem="yLq-Jj-8mf" secondAttribute="leading" id="nBc-Id-QeO"/>
                                                 <constraint firstItem="uGv-fe-tI9" firstAttribute="top" secondItem="zd2-Er-659" secondAttribute="top" constant="8" id="nCx-oI-trI"/>
                                                 <constraint firstItem="5S3-ue-0EI" firstAttribute="centerY" secondItem="VkJ-5a-iOm" secondAttribute="centerY" id="qKr-3P-Vwn"/>
                                                 <constraint firstAttribute="bottom" secondItem="VkJ-5a-iOm" secondAttribute="bottom" constant="8" id="rA1-EE-D1y"/>
@@ -227,6 +234,7 @@
     <resources>
         <image name="TwitterLogoBlue" width="200" height="200"/>
         <image name="favor-icon" width="30" height="30"/>
+        <image name="reply-icon" width="30" height="30"/>
         <image name="retweet-icon" width="30" height="30"/>
     </resources>
 </document>
