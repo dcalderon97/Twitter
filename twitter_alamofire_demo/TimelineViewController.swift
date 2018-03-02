@@ -49,6 +49,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
                 self.tweets = tweets
                 self.tableView.reloadData()
             } else if let error = error {
+                print(error)
                 print("Error getting home timeline: " + error.localizedDescription)
             }
         }
