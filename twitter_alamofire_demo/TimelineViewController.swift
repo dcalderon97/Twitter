@@ -139,6 +139,13 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? DetailViewController{
+            let senderCell = sender as! TweetCell
+            let indexPath = tableView.indexPath(for: senderCell)
+            vc.tweet = tweets[(indexPath?.row)!]
+        }
+    }
     /*
      // MARK: - Navigation
      

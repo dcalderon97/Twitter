@@ -12,7 +12,7 @@ class User {
     
     var name: String?
     var screenName: String?
-    var profilePicutreUrl: String
+    var profilePictureURL: URL
     var coverPictureUrl: String?
     
     var followersCount: String
@@ -50,8 +50,9 @@ class User {
         name = dictionary["name"] as! String
         screenName = "@" + (dictionary["screen_name"] as! String)
         
-        profilePicutreUrl = dictionary["profile_image_url_https"] as! String
-        
+        profilePictureURL = URL(string:dictionary["profile_image_url_https"] as! String)!
+    
+
         if dictionary["profile_banner_url"] != nil  {
             coverPictureUrl = dictionary["profile_banner_url"] as! String
         }

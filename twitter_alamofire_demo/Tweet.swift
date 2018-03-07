@@ -39,17 +39,14 @@ class Tweet {
         // Convert String to Date
         let date = formatter.date(from: createdAtOriginalString)!
         // Configure output format
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
+        formatter.dateStyle = .full
+        
+        formatter.timeStyle = .full
         // Convert Date to String
         createdAtString = formatter.string(from: date)
         
         
     }
-    static func tweets(with array: [[String: Any]]) -> [Tweet] {
-        return array.flatMap({ (dictionary) -> Tweet in
-            Tweet(dictionary: dictionary)
-        })
-    }
+
 }
 

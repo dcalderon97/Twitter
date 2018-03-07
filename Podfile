@@ -12,6 +12,8 @@ target 'twitter_alamofire_demo' do
   pod 'OAuthSwiftAlamofire'
   pod 'KeychainAccess'
   pod 'ActiveLabel', '~> 0.7.0'
+  pod 'DateToolsSwift'
+  pod 'UITextView+Placeholder', '~> 1.2'
   target 'twitter_alamofire_demoTests' do
     inherit! :search_paths
     # Pods for testing

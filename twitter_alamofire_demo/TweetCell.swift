@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import DateToolsSwift
 import ActiveLabel
 
 class TweetCell: UITableViewCell {
@@ -25,7 +26,7 @@ class TweetCell: UITableViewCell {
     
     var tweet: Tweet! {
         didSet {
-            let url = URL(string: tweet.user.profilePicutreUrl)!
+            let url = tweet.user.profilePictureURL
             profileImageView.af_setImage(withURL: url)
             
             profileImageView.layer.cornerRadius = profileImageView.frame.width * 0.5
@@ -38,7 +39,7 @@ class TweetCell: UITableViewCell {
             }
             
             screennameTextLabel.text = tweet.user.screenName
-            timestampLabel.text = tweet.createdAtString
+            timestampLabel.text = "\(formattedDate(date: tweet.createdAtString))"
             usernameTextLabel.text = tweet.user.name
             
             favoriteLabel.text = "\(formatCounter(count: tweet.favoriteCount!))"
@@ -115,6 +116,42 @@ class TweetCell: UITableViewCell {
             })
         }
     }
+    func formattedDate(date: String) -> String{
+        
+        let df = DateFormatter()
+        df.dateStyle = .full
+        df.timeStyle = .full
+        
+        var formattedTime = ""
+        let today = Date()
+        let postedDate = df.date(from: date)
+        let timeDiff = postedDate?.secondsEarlier(than: today)
+        
+        //Seconds
+        if(timeDiff! < 60){
+            formattedTime = "\(timeDiff!)s"
+        }
+            //Minutes
+        else if(timeDiff! < 3600){
+            formattedTime = "\(timeDiff! / 60)m"
+        }
+            //Hours
+        else if(timeDiff! < 86400){
+            formattedTime = "\(timeDiff! / 60 / 60)h"
+        }
+            //Days
+        else if(timeDiff! < 604800){
+            formattedTime = "\(timeDiff! / 60 / 60 / 24)d"
+        }
+            //Simple date format
+        else{
+            df.dateStyle = .short
+            df.timeStyle = .none
+            formattedTime = df.string(from: df.date(from: date)!)
+        }
+        return formattedTime
+    }
+    
     func formatCounter(count: Int) -> String{
         var formattedCount = ""
         // Billion, just in case
