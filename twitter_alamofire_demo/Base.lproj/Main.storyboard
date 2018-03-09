@@ -454,9 +454,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pna-gR-bjB">
                                 <rect key="frame" x="30" y="16" width="26" height="24"/>
                                 <state key="normal" image="close-icon"/>
+                                <connections>
+                                    <action selector="onTapClose:" destination="2pD-IA-se1" eventType="touchUpInside" id="mbZ-CG-SGA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gg-XV-DuP">
-                                <rect key="frame" x="314" y="16" width="45" height="34"/>
+                                <rect key="frame" x="322" y="16" width="45" height="34"/>
                                 <color key="backgroundColor" red="0.37588445758285594" green="0.768707315435882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Reply">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -465,8 +468,8 @@
                                     <action selector="onTapReply:" destination="2pD-IA-se1" eventType="touchUpInside" id="7zg-AQ-8BJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7N-v3-m2p">
-                                <rect key="frame" x="264" y="22.5" width="29" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7N-v3-m2p">
+                                <rect key="frame" x="289" y="24" width="29" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -486,17 +489,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5gg-XV-DuP" firstAttribute="top" secondItem="pna-gR-bjB" secondAttribute="top" id="Ddn-c9-suv"/>
                             <constraint firstItem="7po-Vg-TBs" firstAttribute="leading" secondItem="unQ-gz-eOc" secondAttribute="trailing" constant="8" id="EEq-VD-B7S"/>
                             <constraint firstItem="pna-gR-bjB" firstAttribute="top" secondItem="3jX-pd-Jqi" secondAttribute="top" constant="16" id="F1k-ch-EsG"/>
+                            <constraint firstItem="5gg-XV-DuP" firstAttribute="top" secondItem="pna-gR-bjB" secondAttribute="top" id="HkI-ao-lRc"/>
                             <constraint firstAttribute="trailing" secondItem="7po-Vg-TBs" secondAttribute="trailing" constant="8" id="Pjp-vH-O5i"/>
                             <constraint firstItem="unQ-gz-eOc" firstAttribute="top" secondItem="pna-gR-bjB" secondAttribute="bottom" constant="16" id="Pvn-Di-7KS"/>
-                            <constraint firstAttribute="trailing" secondItem="5gg-XV-DuP" secondAttribute="trailing" constant="16" id="REt-hm-4Yc"/>
+                            <constraint firstItem="5gg-XV-DuP" firstAttribute="trailing" secondItem="7po-Vg-TBs" secondAttribute="trailing" id="QjI-ru-ggm"/>
                             <constraint firstItem="unQ-gz-eOc" firstAttribute="centerX" secondItem="pna-gR-bjB" secondAttribute="centerX" id="Udc-O1-INw"/>
+                            <constraint firstItem="5gg-XV-DuP" firstAttribute="leading" secondItem="S7N-v3-m2p" secondAttribute="trailing" constant="4" id="YQt-vU-jIq"/>
                             <constraint firstItem="7po-Vg-TBs" firstAttribute="top" secondItem="unQ-gz-eOc" secondAttribute="top" id="dWQ-KI-8Bc"/>
                             <constraint firstItem="pna-gR-bjB" firstAttribute="leading" secondItem="3jX-pd-Jqi" secondAttribute="leading" constant="30" id="jGr-Kf-TF3"/>
                             <constraint firstItem="eCV-za-e7o" firstAttribute="top" secondItem="7po-Vg-TBs" secondAttribute="bottom" constant="8" id="mih-Be-Lnf"/>
-                            <constraint firstItem="5gg-XV-DuP" firstAttribute="centerY" secondItem="S7N-v3-m2p" secondAttribute="centerY" id="z4X-st-422"/>
+                            <constraint firstItem="S7N-v3-m2p" firstAttribute="top" secondItem="qdB-uf-Nbp" secondAttribute="bottom" constant="4" id="zik-IE-W5S"/>
                         </constraints>
                     </view>
                     <connections>
@@ -509,7 +513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIX-gh-w10" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2881" y="834"/>
+            <point key="canvasLocation" x="2880.8000000000002" y="833.43328335832086"/>
         </scene>
         <!--Profile-->
         <scene sceneID="IBs-ta-eEe">

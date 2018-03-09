@@ -20,8 +20,7 @@ class ReplyViewController: UIViewController,UITextViewDelegate {
     var tweet: Tweet!
     override func viewDidLoad() {
         super.viewDidLoad()
-        replyButton.layer.cornerRadius = 15
-        replyButton.titleEdgeInsets = UIEdgeInsetsMake(1.5, 1.0, 1.5, 1.0)
+     
         
         tweetTextView.placeholder = "What's happening?"
         tweetTextView.placeholderColor = UIColor.lightGray // optional
@@ -68,7 +67,10 @@ class ReplyViewController: UIViewController,UITextViewDelegate {
         // The new text should be allowed? True/False
         return newText.characters.count < characterLimit
     }
-
+    @IBAction func onTapClose(_ sender: Any) {
+         dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
