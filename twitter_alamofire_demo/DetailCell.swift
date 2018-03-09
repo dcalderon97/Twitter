@@ -23,7 +23,8 @@ class DetailCell: UITableViewCell {
             profileImageView.clipsToBounds = true
             profileImageView.af_setImage(withURL: tweet.user.profilePictureURL)
             usernameLabel.text = tweet.user.name
-            screenNameLabel.text = "@\(tweet.user.screenName)"
+            
+            screenNameLabel.text = tweet.user.screenName
             let df = DateFormatter()
             df.dateStyle = .full
             df.timeStyle = .full

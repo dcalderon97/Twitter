@@ -48,7 +48,12 @@ class DetailViewController: UIViewController,UITableViewDelegate,UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "replySegue" {
+            let replyViewController = segue.destination as! ReplyViewController
+            replyViewController.tweet = tweet
+        }
+    }
     /*
     // MARK: - Navigation
 

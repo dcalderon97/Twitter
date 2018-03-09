@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if User.current != nil {
             // if there is a logged in user then load the home view controller
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let TabbarViewController = storyboard.instantiateViewController(withIdentifier: "TweetsNavigationController")
+            let TabbarViewController = storyboard.instantiateViewController(withIdentifier: "HomeTabBarController")
             window?.rootViewController = TabbarViewController
         }
         return true

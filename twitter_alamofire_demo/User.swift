@@ -13,14 +13,14 @@ class User {
     var name: String?
     var screenName: String?
     var profilePictureURL: URL
-    var coverPictureUrl: String?
+    var coverPictureUrl: URL
     
-    var followersCount: String
-    var followingCount: String
-    
+    var followersCount: Int
+    var followingCount: Int
+    var numberOfTweets: Int
     // For user persistance
     var dictionary: [String: Any]?
-    
+    var description: String
 
     private static var _current: User?
     
@@ -47,20 +47,21 @@ class User {
         }
     }
     init(dictionary: [String: Any]) {
-        name = dictionary["name"] as! String
+        numberOfTweets = dictionary["statuses_count"] as! Int
+        //print(numberOfTweets)
+        name = dictionary["name"] as? String
         screenName = "@" + (dictionary["screen_name"] as! String)
-        
         profilePictureURL = URL(string:dictionary["profile_image_url_https"] as! String)!
     
 
         if dictionary["profile_banner_url"] != nil  {
-            coverPictureUrl = dictionary["profile_banner_url"] as! String
+            coverPictureUrl = URL(string:dictionary["profile_banner_url"] as! String)!
+        }else{
+            coverPictureUrl = URL(string:"nil")!
         }
-        
-        followersCount = String(dictionary["followers_count"] as! Int)
-        followingCount = String(dictionary["friends_count"] as! Int)
-        
+        followersCount = dictionary["followers_count"] as! Int
+        followingCount = dictionary["friends_count"] as! Int
+        description = dictionary["description"] as! String
         self.dictionary = dictionary
-
     }
 }

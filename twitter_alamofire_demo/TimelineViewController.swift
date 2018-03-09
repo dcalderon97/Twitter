@@ -14,7 +14,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     var isMoreDataLoading = false
     var loadingMoreView:InfiniteScrollActivityView?
     @IBOutlet weak var tableView: UITableView!
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -23,6 +23,8 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var retweetButton: UIButton!
     @IBOutlet weak var retweetLabel: UILabel!
     @IBOutlet weak var favoriteLabel: UILabel!
+    @IBOutlet weak var verticalImageSpacing: NSLayoutConstraint!
+    @IBOutlet weak var mediaImageView: UIImageView!
     
     var tweet: Tweet! {
         didSet {
@@ -57,6 +59,17 @@ class TweetCell: UITableViewCell {
             else{
                 retweetButton.setImage(#imageLiteral(resourceName: "retweet-icon"), for: .normal)
             }
+            if let url = tweet.mediaUrl {
+                mediaImageView.isHidden = false
+                print(tweet.user.name)
+                print(url)
+                mediaImageView.af_setImage(withURL: url)
+                verticalImageSpacing.constant = 300
+            }
+            else {
+                mediaImageView.isHidden = true
+                verticalImageSpacing.constant = 8
+            }
         }
     }
     @IBAction func didTapFavorite(_ sender: Any) {
@@ -86,6 +99,7 @@ class TweetCell: UITableViewCell {
                 }
             })
         }
+    
     }
     
     @IBAction func didTapRetweet(_ sender: Any) {
@@ -115,6 +129,7 @@ class TweetCell: UITableViewCell {
                 }
             })
         }
+      
     }
     func formattedDate(date: String) -> String{
         
@@ -170,6 +185,7 @@ class TweetCell: UITableViewCell {
         
         return formattedCount
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

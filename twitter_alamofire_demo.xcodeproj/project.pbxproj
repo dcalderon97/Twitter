@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		547221C96829E6F537FCE2FE /* Pods_twitter_alamofire_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCA05DC47A45B9943F23F5F /* Pods_twitter_alamofire_demoUITests.framework */; };
 		6C028F67F4B75B9CE911AB20 /* Pods_twitter_alamofire_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001F2EB27736B82E6AF0082B /* Pods_twitter_alamofire_demo.framework */; };
+		EC7802BB2052F31C00A34966 /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7802BA2052F31C00A34966 /* ReplyViewController.swift */; };
 		EC9B47B3204F5CEE001ECC80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B47B2204F5CEE001ECC80 /* DetailViewController.swift */; };
 		EC9B47B5204F6275001ECC80 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B47B4204F6275001ECC80 /* DetailCell.swift */; };
 		EC9B47B7204F628D001ECC80 /* ButtonDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B47B6204F628D001ECC80 /* ButtonDetailCell.swift */; };
 		EC9B47B9204F62C1001ECC80 /* StatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B47B8204F62C1001ECC80 /* StatisticsCell.swift */; };
 		EC9B47BB204F6FD8001ECC80 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B47BA204F6FD8001ECC80 /* ComposeViewController.swift */; };
+		EC9B47BD20509D0C001ECC80 /* ProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B47BC20509D0C001ECC80 /* ProfileViewCell.swift */; };
+		EC9B47BF2050A3D5001ECC80 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B47BE2050A3D5001ECC80 /* ProfileViewController.swift */; };
 		ECCE59FE2047557A00983E6F /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE59FD2047557A00983E6F /* InfiniteScrollActivityView.swift */; };
 		ED1AFD311E942B2500FD4B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1AFD301E942B2500FD4B90 /* AppDelegate.swift */; };
 		ED1AFD361E942B2500FD4B90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1AFD341E942B2500FD4B90 /* Main.storyboard */; };
@@ -56,11 +59,14 @@
 		A0274E4BBA7E3A768A46223E /* Pods-twitter_alamofire_demoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter_alamofire_demoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-twitter_alamofire_demoTests/Pods-twitter_alamofire_demoTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA8B2B7251F8A233C7185620 /* Pods-twitter_alamofire_demoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter_alamofire_demoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter_alamofire_demoUITests/Pods-twitter_alamofire_demoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AFBE91109514C5BA32FE14C3 /* Pods_twitter_alamofire_demoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twitter_alamofire_demoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7802BA2052F31C00A34966 /* ReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
 		EC9B47B2204F5CEE001ECC80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EC9B47B4204F6275001ECC80 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		EC9B47B6204F628D001ECC80 /* ButtonDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDetailCell.swift; sourceTree = "<group>"; };
 		EC9B47B8204F62C1001ECC80 /* StatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCell.swift; sourceTree = "<group>"; };
 		EC9B47BA204F6FD8001ECC80 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		EC9B47BC20509D0C001ECC80 /* ProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewCell.swift; sourceTree = "<group>"; };
+		EC9B47BE2050A3D5001ECC80 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		ECCE59FD2047557A00983E6F /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
 		ED1AFD2D1E942B2500FD4B90 /* twitter_alamofire_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitter_alamofire_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1AFD301E942B2500FD4B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -208,6 +214,8 @@
 				ED1D234B1EF6E42900C51ACC /* TimelineViewController.swift */,
 				EC9B47B2204F5CEE001ECC80 /* DetailViewController.swift */,
 				EC9B47BA204F6FD8001ECC80 /* ComposeViewController.swift */,
+				EC9B47BE2050A3D5001ECC80 /* ProfileViewController.swift */,
+				EC7802BA2052F31C00A34966 /* ReplyViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 				EC9B47B4204F6275001ECC80 /* DetailCell.swift */,
 				EC9B47B6204F628D001ECC80 /* ButtonDetailCell.swift */,
 				EC9B47B8204F62C1001ECC80 /* StatisticsCell.swift */,
+				EC9B47BC20509D0C001ECC80 /* ProfileViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -556,9 +565,12 @@
 				ED1D234E1EF71C4B00C51ACC /* TweetCell.swift in Sources */,
 				ED1D23481EF6E37700C51ACC /* Tweet.swift in Sources */,
 				ED1AFD611E94496E00FD4B90 /* LoginViewController.swift in Sources */,
+				EC9B47BD20509D0C001ECC80 /* ProfileViewCell.swift in Sources */,
 				ED1AFD5F1E94421000FD4B90 /* APIManager.swift in Sources */,
+				EC9B47BF2050A3D5001ECC80 /* ProfileViewController.swift in Sources */,
 				ED1AFD311E942B2500FD4B90 /* AppDelegate.swift in Sources */,
 				ED1D234C1EF6E42900C51ACC /* TimelineViewController.swift in Sources */,
+				EC7802BB2052F31C00A34966 /* ReplyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
