@@ -90,10 +90,10 @@ Time spent: **10** hours spent in total
 
 The following **required** stories are completed:
 
-- [ ] User can tap on a tweet to view it in a detail view, with controls to retweet, favorite, and reply (2pts)
-- [ ] User can compose a new tweet by tapping on a compose button. (3pts)
-- [ ] When composing a tweet, user sees a countdown for the number of characters remaining for the tweet (out of 140) (2pt)
-- [ ] User can view their profile in a *profile tab* (3pts)
+- [x] User can tap on a tweet to view it in a detail view, with controls to retweet, favorite, and reply (2pts)
+- [x] User can compose a new tweet by tapping on a compose button. (3pts)
+- [x] When composing a tweet, user sees a countdown for the number of characters remaining for the tweet (out of 140) (2pt)
+- [x] User can view their profile in a *profile tab* (3pts)
    - Contains the user header view: picture and tagline
    - Contains a section with the users basic stats: # tweets, # following, # followers
 
@@ -105,7 +105,7 @@ The following **stretch** features are implemented:
    - Contains a section with the users basic stats: # tweets, # following, # followers.
 - [ ] After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the timeline from the network. (1pt)
 - [ ] User can reply to any tweet, and replies should be prefixed with the username and the reply_id should be set when posting the tweet. (2pts)
-- [ ] User sees embedded images in tweet if available. (3pts)
+- [x] User sees embedded images in tweet if available. (3pts)
 - [ ] Pulling down the profile page should blur and resize the header image. (2pts)
 
 The following **additional** features are implemented:
@@ -121,7 +121,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![twitter6](twitter6.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
