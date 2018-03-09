@@ -240,9 +240,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ai3-YB-ESY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ai3-YB-ESY">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="127" id="Ji6-mx-2Bv" customClass="DetailCell" customModule="twitter_alamofire_demo" customModuleProvider="target">
@@ -423,6 +422,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ai3-YB-ESY" firstAttribute="top" secondItem="lUn-f1-JU5" secondAttribute="bottom" id="AK0-ha-K1F"/>
+                            <constraint firstAttribute="bottom" secondItem="ai3-YB-ESY" secondAttribute="bottom" id="WCZ-ym-pzB"/>
+                            <constraint firstAttribute="trailing" secondItem="ai3-YB-ESY" secondAttribute="trailing" id="n8a-rw-16c"/>
+                            <constraint firstItem="ai3-YB-ESY" firstAttribute="leading" secondItem="aqz-WM-aYu" secondAttribute="leading" id="qeV-ye-giI"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="ai3-YB-ESY" id="o2n-mb-9g6"/>
