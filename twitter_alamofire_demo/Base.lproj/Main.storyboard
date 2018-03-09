@@ -509,7 +509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIX-gh-w10" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3000.8000000000002" y="798.35082458770626"/>
+            <point key="canvasLocation" x="2881" y="834"/>
         </scene>
         <!--Profile-->
         <scene sceneID="IBs-ta-eEe">
@@ -676,7 +676,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAs-Yu-4GF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1407.2" y="789.35532233883066"/>
+            <point key="canvasLocation" x="559" y="833"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="EBG-hX-smk">
@@ -762,7 +762,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2116" y="789"/>
+            <point key="canvasLocation" x="1999" y="835"/>
         </scene>
         <!--Home-->
         <scene sceneID="WXZ-z8-8LI">
